@@ -1,0 +1,10 @@
+C:\Users\Naoya\Documents\Visual Studio 2013\Projects\TaskManager\TaskManager\bin\Release\TaskManager.exe.config
+C:\Users\Naoya\Documents\Visual Studio 2013\Projects\TaskManager\TaskManager\bin\Release\TaskManager.exe
+C:\Users\Naoya\Documents\Visual Studio 2013\Projects\TaskManager\TaskManager\bin\Release\TaskManager.pdb
+C:\Users\Naoya\Documents\Visual Studio 2013\Projects\TaskManager\TaskManager\obj\Release\TaskManager.Form1.resources
+C:\Users\Naoya\Documents\Visual Studio 2013\Projects\TaskManager\TaskManager\obj\Release\TaskManager.Form2.resources
+C:\Users\Naoya\Documents\Visual Studio 2013\Projects\TaskManager\TaskManager\obj\Release\TaskManager.Properties.Resources.resources
+C:\Users\Naoya\Documents\Visual Studio 2013\Projects\TaskManager\TaskManager\obj\Release\TaskManager.csproj.GenerateResource.Cache
+C:\Users\Naoya\Documents\Visual Studio 2013\Projects\TaskManager\TaskManager\obj\Release\TaskManager.exe
+C:\Users\Naoya\Documents\Visual Studio 2013\Projects\TaskManager\TaskManager\obj\Release\TaskManager.pdb
+C:\Users\Naoya\Documents\Visual Studio 2013\Projects\TaskManager\TaskManager\obj\Release\TaskManager.addTag.resources
