@@ -12,8 +12,17 @@ using TaskManager;
 
 namespace TaskManager
 {
+    /// <summary>
+    /// データを取り扱うクラス
+    /// </summary>
     class ManagerUtil
     {
+        /// <summary>
+        /// データの作成
+        /// データ形式はJSON
+        /// </summary>
+        /// <param name="filename">名前</param>
+        /// <param name="data">Task型</param>
         public void createData(String filename, Task data)
         {
             if (!Directory.Exists("data"))
@@ -22,6 +31,17 @@ namespace TaskManager
             }
 
             filename = "data\\" + filename + ".json";
+
+            var existNames = allFilename();
+
+            foreach (var name in allFilename())
+            {
+                if (name.Equals(filename))
+                {
+                    MessageBox.Show("同一名のタスクは作成できません");
+                    return;
+                }
+            }
 
             //DataContractSerializreをインスタンス化
             var serializer = new DataContractJsonSerializer(typeof(Task));
@@ -35,9 +55,15 @@ namespace TaskManager
             finally
             {
                 fs.Close();
-            }            
+            }
         }
 
+
+        /// <summary>
+        /// ファイル名を指定してデータの読み込み
+        /// </summary>
+        /// <param name="filename"></param>
+        /// <returns></returns>
         public Task readData(String filename)
         {
             if (!File.Exists(filename))
@@ -90,7 +116,10 @@ namespace TaskManager
             return obj;
         }
 
-        //すべてのファイル名
+        /// <summary>
+        /// dataフォルダ以下のファイル名をすべて取得
+        /// </summary>
+        /// <returns>String型の配列</returns>
         public String[] allFilename(){
             if (!Directory.Exists("data"))
             {
@@ -99,6 +128,11 @@ namespace TaskManager
             return Directory.GetFiles("data\\");
         }
 
+        /// <summary>
+        /// データを削除するメソッド
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         public bool deleteData(String name)
         {
             var filename = name;
@@ -114,7 +148,10 @@ namespace TaskManager
             return true;
         }
 
-        //タグリストの読み込み
+        /// <summary>
+        /// すべてのタグの読み込み
+        /// </summary>
+        /// <returns></returns>
         public ArrayList getTagList()
         {
             String path = "tags.csv";
@@ -141,7 +178,11 @@ namespace TaskManager
             return csvList;
         }
 
-        //csvファイルの書き込み
+        /// <summary>
+        /// 新規タグの追加
+        /// データ形式はcsv
+        /// </summary>
+        /// <param name="newtag"></param>
         public void writeTag(String newtag)
         {
             //書込み用stream
@@ -151,7 +192,10 @@ namespace TaskManager
             writer.Close();
         }
 
-        //csvファイルから1行削除
+        /// <summary>
+        /// 指定したtagを削除
+        /// </summary>
+        /// <param name="deletetag"></param>
         public void deleteTag(String deletetag)
         {
             ManagerUtil manager = new ManagerUtil();
@@ -176,7 +220,10 @@ namespace TaskManager
             writer.Close();
         }
 
-        //タグが削除されたときそのタグのタスクがあったらそれも削除
+        /// <summary>
+        /// タグが削除されたときにそのタグに属しているタスクを削除するメソッド
+        /// </summary>
+        /// <param name="targetTag"></param>
         public void deleteDataOfTag(String targetTag)
         {
             ManagerUtil manager = new ManagerUtil();
@@ -187,13 +234,15 @@ namespace TaskManager
             {
                 if (targetTag.Equals(task.tag))
                 {
-                    
                     manager.deleteData(task.name);
                 }
             }
         }
 
-        //タスクを一つずつ読み込みリストに追加
+        /// <summary>
+        /// 現在あるすべてのタスクを取得
+        /// </summary>
+        /// <returns></returns>
         public ArrayList roadTask()
         {
             ManagerUtil manager = new ManagerUtil();
@@ -208,7 +257,6 @@ namespace TaskManager
                 var task = manager.readData(tagName);
                 taskList.Add(task);
             }
-
             return taskList;
         }
     }
