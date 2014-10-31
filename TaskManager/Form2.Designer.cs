@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.tukiBox = new System.Windows.Forms.ComboBox();
-            this.hinitiBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.nametext = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,6 +38,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.addTag = new System.Windows.Forms.Button();
             this.tagBox = new System.Windows.Forms.ComboBox();
+            this.kigen = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -51,69 +50,6 @@
             this.label1.Size = new System.Drawing.Size(50, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "期限";
-            // 
-            // tukiBox
-            // 
-            this.tukiBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.tukiBox.FormattingEnabled = true;
-            this.tukiBox.Items.AddRange(new object[] {
-            "1月",
-            "2月",
-            "3月",
-            "4月",
-            "5月",
-            "6月",
-            "7月",
-            "8月",
-            "9月",
-            "10月",
-            "11月",
-            "12月"});
-            this.tukiBox.Location = new System.Drawing.Point(17, 44);
-            this.tukiBox.Name = "tukiBox";
-            this.tukiBox.Size = new System.Drawing.Size(121, 20);
-            this.tukiBox.TabIndex = 1;
-            // 
-            // hinitiBox
-            // 
-            this.hinitiBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.hinitiBox.FormattingEnabled = true;
-            this.hinitiBox.Items.AddRange(new object[] {
-            "1日",
-            "2日",
-            "3日",
-            "4日",
-            "5日",
-            "6日",
-            "7日",
-            "8日",
-            "9日",
-            "10日",
-            "11日",
-            "12日",
-            "13日",
-            "14日",
-            "15日",
-            "16日",
-            "17日",
-            "18日",
-            "19日",
-            "20日",
-            "21日",
-            "22日",
-            "23日",
-            "24日",
-            "25日",
-            "26日",
-            "27日",
-            "28日",
-            "29日",
-            "30日",
-            "31日"});
-            this.hinitiBox.Location = new System.Drawing.Point(144, 44);
-            this.hinitiBox.Name = "hinitiBox";
-            this.hinitiBox.Size = new System.Drawing.Size(121, 20);
-            this.hinitiBox.TabIndex = 2;
             // 
             // label2
             // 
@@ -200,9 +136,17 @@
             this.tagBox.Size = new System.Drawing.Size(121, 20);
             this.tagBox.TabIndex = 13;
             // 
+            // kigen
+            // 
+            this.kigen.Location = new System.Drawing.Point(17, 45);
+            this.kigen.Name = "kigen";
+            this.kigen.Size = new System.Drawing.Size(174, 19);
+            this.kigen.TabIndex = 14;
+            // 
             // Form2
             // 
             this.ClientSize = new System.Drawing.Size(284, 282);
+            this.Controls.Add(this.kigen);
             this.Controls.Add(this.tagBox);
             this.Controls.Add(this.addTag);
             this.Controls.Add(this.label4);
@@ -212,9 +156,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.nametext);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.hinitiBox);
-            this.Controls.Add(this.tukiBox);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form2";
             this.Text = "タスクの追加";
             this.ResumeLayout(false);
@@ -225,8 +168,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox tukiBox;
-        private System.Windows.Forms.ComboBox hinitiBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox nametext;
         private System.Windows.Forms.Label label3;
@@ -236,6 +177,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button addTag;
         private System.Windows.Forms.ComboBox tagBox;
+        private System.Windows.Forms.DateTimePicker kigen;
 
 
     }

@@ -12,12 +12,14 @@ namespace TaskManager
     public class Task
     {
         [DataMember]
-        public String deadline { get; set; }
+        public String googleCalendarId { get; set; } 
+        [DataMember]
+        public DateTime deadline { get; set; }
         [DataMember]
         public String name { get; set; }
         [DataMember]
         public String tag { get; set; }
         [DataMember]
-        public String outline { get; set; }
+        public String outline { get; set; }        
     }
 }

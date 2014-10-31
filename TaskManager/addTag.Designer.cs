@@ -80,6 +80,7 @@
             this.Controls.Add(this.cansel);
             this.Controls.Add(this.tagName);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "addTag";
             this.Text = "タグの追加";
             this.ResumeLayout(false);

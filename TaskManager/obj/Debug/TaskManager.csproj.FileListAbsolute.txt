@@ -9,3 +9,8 @@ C:\Users\Naoya\Documents\Visual Studio 2013\Projects\TaskManager\TaskManager\obj
 C:\Users\Naoya\Documents\Visual Studio 2013\Projects\TaskManager\TaskManager\obj\Debug\TaskManager.pdb
 C:\Users\Naoya\Documents\Visual Studio 2013\Projects\TaskManager\TaskManager\obj\Debug\TaskManager.Form2.resources
 C:\Users\Naoya\Documents\Visual Studio 2013\Projects\TaskManager\TaskManager\obj\Debug\TaskManager.addTag.resources
+C:\Users\Naoya\Documents\Visual Studio 2013\Projects\TaskManager\TaskManager\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\Naoya\Documents\Visual Studio 2013\Projects\TaskManager\TaskManager\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\Naoya\Documents\Visual Studio 2013\Projects\TaskManager\TaskManager\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\Naoya\Documents\Visual Studio 2013\Projects\TaskManager\TaskManager\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\Naoya\Documents\Visual Studio 2013\Projects\TaskManager\TaskManager\obj\Debug\TaskManager.csproj.App.config

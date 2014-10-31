@@ -14,7 +14,6 @@ namespace TaskManager
 {
     class ManagerUtil
     {
-
         public void createData(String filename, Task data)
         {
             if (!Directory.Exists("data"))
@@ -36,8 +35,7 @@ namespace TaskManager
             finally
             {
                 fs.Close();
-            }
-
+            }            
         }
 
         public Task readData(String filename)
@@ -112,17 +110,12 @@ namespace TaskManager
                 return false;
             }
 
-            var result = MessageBox.Show("本当に削除しますか？", "削除", MessageBoxButtons.YesNo);
-
-            if (result == DialogResult.No)
-                return false;
-
             System.IO.File.Delete(filename);
             return true;
         }
 
         //タグリストの読み込み
-        public ArrayList tagList()
+        public ArrayList getTagList()
         {
             String path = "tags.csv";
             if (!File.Exists(path))
@@ -164,7 +157,7 @@ namespace TaskManager
             ManagerUtil manager = new ManagerUtil();
 
             //タグリストの読み込み
-            var tagList = manager.tagList();
+            var tagList = manager.getTagList();
 
             if (!tagList.Contains(deletetag))
             {
@@ -187,6 +180,23 @@ namespace TaskManager
         public void deleteDataOfTag(String targetTag)
         {
             ManagerUtil manager = new ManagerUtil();
+            var taskList = manager.roadTask();
+
+            //一つずつ確認して削除
+            foreach (Task task in taskList)
+            {
+                if (targetTag.Equals(task.tag))
+                {
+                    
+                    manager.deleteData(task.name);
+                }
+            }
+        }
+
+        //タスクを一つずつ読み込みリストに追加
+        public ArrayList roadTask()
+        {
+            ManagerUtil manager = new ManagerUtil();
 
             //すべてのタスクをリストに格納
             var nameList = manager.allFilename();
@@ -199,15 +209,7 @@ namespace TaskManager
                 taskList.Add(task);
             }
 
-            //一つずつ確認して削除
-            foreach (Task task in taskList)
-            {
-                if (targetTag.Equals(task.tag))
-                {
-                    
-                    manager.deleteData(task.name);
-                }
-            }
+            return taskList;
         }
     }
 }
